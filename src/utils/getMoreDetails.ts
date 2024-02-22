@@ -1,6 +1,7 @@
 // utils/getMoreDetails.js
 
 import { Weather } from '@/app/types/weather';
+import { formatDateTime } from './time';
 export type WeatherDetails = {
   data: number | string;
   unit: string;
@@ -8,12 +9,7 @@ export type WeatherDetails = {
 };
 export const getMoreDetails = (weather: Weather): WeatherDetails[] => [
   {
-    data: weather.current.pressure_mb,
-    unit: 'hPa',
-    description: 'Pressure',
-  },
-  {
-    data: weather.current.last_updated,
+    data: formatDateTime(weather.current.last_updated),
     unit: '',
     description: 'Last time updated',
   },
@@ -36,6 +32,11 @@ export const getMoreDetails = (weather: Weather): WeatherDetails[] => [
     data: weather.current.wind_degree,
     unit: '°',
     description: 'Wind Direction',
+  },
+  {
+    data: weather.current.pressure_mb,
+    unit: 'hPa',
+    description: 'Pressure',
   },
   {
     data: JSON.stringify({

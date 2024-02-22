@@ -3,6 +3,7 @@ import { CardData } from '../CardData';
 import { WeatherUVIndex } from './WeatherUVIndex';
 import { WeatherWindSpeed } from './WeatherWindSpeed';
 import { WeatherFeelsLike } from './WeatherFeelsLike';
+import { WeatherPressure } from './WeatherPressure';
 
 export const WeatherMoreDetails = ({ moreDetails }: { moreDetails: WeatherDetails[] }) => {
   return (
@@ -28,6 +29,8 @@ export const WeatherMoreDetails = ({ moreDetails }: { moreDetails: WeatherDetail
               />
             );
           }
+          if (detail.description.toLowerCase() === 'pressure')
+            return <WeatherPressure pressure={Number(detail.data)} key={index} />;
           return <CardData key={index} data={detail.data} unit={detail.unit} description={detail.description} />;
         })}
       </div>

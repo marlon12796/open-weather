@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 export const WeatherFeelsLike = ({ feels_like, current_temp }: { feels_like: number; current_temp: number }) => {
   return (
-    <Card className="order-6  flex h-48 flex-col justify-between">
+    <Card className="order-6 flex h-48 flex-col justify-between">
       <CardHeader className="[padding-block-end:1em]">
         <CardTitle className="flex flex-row gap-2 items-center">
           <i>
