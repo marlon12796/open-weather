@@ -1,24 +1,18 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
 import { searchCity } from '@/lib/weather/searchCity';
 
-import { useFormStatus, useFormState } from 'react-dom';
+import { useFormState } from 'react-dom';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Search } from 'lucide-react';
 import { TooltipButton } from './TooltipButton';
+import { ButtonCitySubmit } from '../ButtonCity';
 
 export const SearchCityButton = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -28,16 +22,6 @@ export const SearchCityButton = () => {
   const [cities, setCities]: any = useState([null]);
 
   const { toast } = useToast();
-
-  const SubmitButton = () => {
-    const { pending } = useFormStatus();
-    return (
-      <Button type="submit" size="sm" className="flex items-center gap-2 px-3">
-        <Search className="h-[1.2rem] w-[1.2rem]" />
-        {pending ? 'Searching...' : 'Search'}
-      </Button>
-    );
-  };
 
   useEffect(() => {
     setCities(citiesServer);
@@ -54,10 +38,7 @@ export const SearchCityButton = () => {
   return (
     <Dialog open={openModal} onOpenChange={setOpenModal}>
       <DialogTrigger asChild>
-        <TooltipButton
-          onClick={() => setOpenModal(true)}
-          content="Search a city"
-        >
+        <TooltipButton onClick={() => setOpenModal(true)} content="Search a city">
           <Search className="h-[1.2rem] w-[1.2rem]" />
         </TooltipButton>
       </DialogTrigger>
@@ -70,14 +51,9 @@ export const SearchCityButton = () => {
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input
-              id="link"
-              placeholder="Name of your city"
-              name="city"
-              required
-            />
+            <Input id="link" placeholder="Name of your city" name="city" required />
           </div>
-          <SubmitButton />
+          <ButtonCitySubmit />
         </form>
 
         <div id="results" className="flex flex-col gap-2">

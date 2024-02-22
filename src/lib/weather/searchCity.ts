@@ -15,7 +15,6 @@ export const searchCity = async (_prevState: any, formData: FormData) => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
     return {
       results: result,
     };

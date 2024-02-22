@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { Weather } from '@/app/types/weather';
 export const WeatherCarousel = ({ weather }: { weather: Weather }) => {
   return (
-    <section className="w-full">
-      <Carousel className="w-full">
+    <section className="w-full [padding-block-start:0.5rem]">
+      <Carousel className="w-[95%] [margin-inline:auto]">
         <CarouselContent>
           {weather.forecast.forecastday[0].hour.map((hour: any, index: any) => (
             <CarouselItem key={index} className="basis-1/8">

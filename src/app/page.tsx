@@ -1,4 +1,3 @@
-
 import { WeatherView } from '@/components/WeatherView';
 import { getWeather } from '@/lib/weather/getWeather';
 
