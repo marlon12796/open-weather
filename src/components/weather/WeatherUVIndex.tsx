@@ -3,9 +3,8 @@ import { Progress } from '../ui/Progress';
 
 export const WeatherUVIndex = ({ uvIndexForToday }: { uvIndexForToday: number }) => {
   const uvIndex = uvIndexForToday > 10 ? 9.5 : uvIndexForToday;
-  console.log(uvIndex);
   return (
-    <Card className="order-5 flex h-48 flex-col justify-between">
+    <Card className="order-8 flex h-48 flex-col justify-between">
       <CardHeader className="">
         <CardTitle className="flex flex-row gap-2 items-center">
           <i>

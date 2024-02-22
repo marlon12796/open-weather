@@ -19,7 +19,6 @@ export const WeatherView = ({ weather, defaultLocation }: { weather: Weather; de
   const [defaultLocationState, setDefaultLocationState] = useState(false);
   const [addedToFavorites, setAddedToFavorites] = useState(false);
   const [currentDefaultLocation, setCurrentDefaultLocation] = useState('');
-
   const moreDetails = getMoreDetails(weather);
   const setFavorite = () => {
     setAddedToFavorites(true);

@@ -1,17 +1,21 @@
 // utils/getMoreDetails.js
 
 import { Weather } from '@/app/types/weather';
-
-export const getMoreDetails = (weather: Weather) => [
+export type WeatherDetails = {
+  data: number | string;
+  unit: string;
+  description: string;
+};
+export const getMoreDetails = (weather: Weather): WeatherDetails[] => [
   {
     data: weather.current.pressure_mb,
     unit: 'hPa',
     description: 'Pressure',
   },
   {
-    data: weather.current.feelslike_c,
-    unit: '°C',
-    description: 'Feels like',
+    data: weather.current.last_updated,
+    unit: '',
+    description: 'Last time updated',
   },
   {
     data: weather.forecast.forecastday[0].day.totalprecip_mm,
@@ -34,13 +38,20 @@ export const getMoreDetails = (weather: Weather) => [
     description: 'Wind Direction',
   },
   {
-    data: weather.current.last_updated,
-    unit: '',
-    description: 'Last time updated',
+    data: JSON.stringify({
+      feels_like: `${weather.current.feelslike_c}`,
+      current_temperature: `${weather.current.temp_c}`,
+    }),
+    unit: '°C',
+    description: 'Feels like',
   },
   {
-    data: weather.forecast.forecastday[0].day.maxwind_kph,
-    unit: 'km/h',
-    description: 'Max wind',
+    data: JSON.stringify({
+      direction: weather.current.wind_degree,
+      velocity: weather.forecast.forecastday[0].day.maxwind_kph * 0.27778,
+    }),
+    unit: 'm/s',
+
+    description: 'Wind speed',
   },
 ];
