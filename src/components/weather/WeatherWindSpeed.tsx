@@ -5,7 +5,7 @@ export const WeatherWindSpeed = ({ speed, deg }: WeatherCompassProps) => {
   return (
     <Card className="order-7 flex h-48 flex-col justify-between">
       <CardHeader className="[padding-block-end:0]">
-        <CardTitle className="flex flex-row gap-2 items-center">
+        <CardTitle className="flex flex-row gap-2 items-center text-base sm:text-xl">
           <i>
             <svg
               viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ export const WeatherWindSpeed = ({ speed, deg }: WeatherCompassProps) => {
           Wind Speed
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex justify-center p-0">
+      <CardContent className="flex justify-center items-end h-full p-0">
         <WeatherCompass speed={speed} deg={deg} />
       </CardContent>
     </Card>

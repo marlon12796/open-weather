@@ -13,7 +13,7 @@ export const Nav = () => {
     <nav className="flex items-center justify-between p-3 px-4">
       <div className="flex items-center gap-2">
         <Image src="/favicon.png" alt="Wethr" width={32} height={32} />
-        <Link href="/" className="text-xl font-bold hidden sm:block">
+        <Link href="/" className="text-xl sr-only font-bold hidden sm:block md:not-sr-only">
           Weather
         </Link>
       </div>

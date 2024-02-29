@@ -1,9 +1,9 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 export const WeatherPressure = ({ pressure }: { pressure: number }) => {
   return (
-    <Card className="order-5  flex h-48 flex-col justify-between">
-      <CardHeader>
-        <CardTitle className="flex flex-row gap-2 items-center">
+    <Card className="order-5  flex h-48 flex-col justify-between p-[1.2em] gap-2">
+      <CardHeader className="gow-[2] p-0">
+        <CardTitle className="flex flex-row gap-2 items-center  text-base sm:text-xl">
           <i>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -22,11 +22,11 @@ export const WeatherPressure = ({ pressure }: { pressure: number }) => {
           Pressure
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="grow-[1] p-0">
         <p>{pressure} hPa</p>
       </CardContent>
-      <CardFooter>
-        <p>
+      <CardFooter className="grow-[3] p-0">
+        <p className="[text-wrap:balance]">
           {pressure < 1000
             ? 'Low pressure. Expect changes in the weather.'
             : pressure >= 1000 && pressure <= 1010

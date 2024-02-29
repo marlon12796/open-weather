@@ -3,9 +3,9 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 export const WeatherFeelsLike = ({ feels_like, current_temp }: { feels_like: number; current_temp: number }) => {
   return (
-    <Card className="order-6 flex h-48 flex-col justify-between">
-      <CardHeader className="[padding-block-end:1em]">
-        <CardTitle className="flex flex-row gap-2 items-center">
+    <Card className="order-6 flex h-48 flex-col justify-between gap-2 p-[1.25em] ">
+      <CardHeader className="grow-[2] p-0 ">
+        <CardTitle className="flex flex-row gap-2 items-center  text-base sm:text-xl">
           <i>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -23,11 +23,11 @@ export const WeatherFeelsLike = ({ feels_like, current_temp }: { feels_like: num
           Feels like
         </CardTitle>
       </CardHeader>
-      <CardContent className="[padding-block-end:1em]">
+      <CardContent className="grow p-0">
         <p>{Math.floor(feels_like)}&deg;</p>
       </CardContent>
-      <CardFooter>
-        <p>
+      <CardFooter className="grow-[3] p-0">
+        <p className="[text-wrap:balance]">
           {feels_like < current_temp
             ? 'Feels colder than the actual temperature.'
             : feels_like > current_temp

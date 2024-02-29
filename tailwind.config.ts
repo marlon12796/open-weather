@@ -3,12 +3,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const config = {
   darkMode: ['class'],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
     container: {
@@ -19,7 +14,7 @@ const config = {
       },
     },
     screens: {
-      sm: '345px',
+      sm: '480px',
       md: '640px',
       lg: '1024px',
       xl: '1280px',
@@ -81,6 +76,10 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        mainWrapp: 'repeat(auto-fill, minmax(min(100%,10rem), 1fr))',
       },
     },
   },

@@ -4,9 +4,9 @@ import { Progress } from '../ui/Progress';
 export const WeatherUVIndex = ({ uvIndexForToday }: { uvIndexForToday: number }) => {
   const uvIndex = uvIndexForToday > 10 ? 9.5 : uvIndexForToday;
   return (
-    <Card className="order-8 flex h-48 flex-col justify-between">
-      <CardHeader className="">
-        <CardTitle className="flex flex-row gap-2 items-center">
+    <Card className="order-8 flex h-48 flex-col justify-between gap-2 p-[1.25em]">
+      <CardHeader className="grow p-0">
+        <CardTitle className="flex flex-row gap-2 items-center  text-base sm:text-xl">
           <i>
             <svg
               viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ export const WeatherUVIndex = ({ uvIndexForToday }: { uvIndexForToday: number })
           UV Index
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-2">
+      <CardContent className="flex flex-col gap-2 grow-[2] p-0">
         <p className="inline-flex gap-2">
           {Math.round(uvIndex)}
           <span>
@@ -46,8 +46,8 @@ export const WeatherUVIndex = ({ uvIndexForToday }: { uvIndexForToday: number })
         </p>
         <Progress aria-label="UV Index" value={uvIndex * 10} className="grid items-center" />
       </CardContent>
-      <CardFooter>
-        <p>
+      <CardFooter className="grow-[3] p-0">
+        <p className="[text-wrap:balance]">
           {uvIndexForToday <= 2
             ? 'No protection needed.'
             : uvIndexForToday <= 5

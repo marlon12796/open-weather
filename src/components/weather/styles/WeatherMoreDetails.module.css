@@ -1,0 +1,7 @@
+.weather-wrapp {
+  --w: 190px;
+  --n: 4;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(100%/(var(--n) + 1) + 0.1%, var(--w), 100%), 1fr));
+  gap: 1rem;
+}

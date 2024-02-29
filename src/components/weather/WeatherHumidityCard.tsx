@@ -6,7 +6,7 @@ export const WeatherHumidityCard = ({ weather }: { weather: Weather }) => {
   return (
     <Card className="flex flex-col items-center justify-center">
       <CardHeader>
-        <CardTitle className="flex flex-col items-center justify-center gap-2">
+        <CardTitle className="flex flex-col items-center justify-center gap-2  text-base sm:text-xl">
           <BsDroplet className="w-10 h-10" />
           {weather.forecast.forecastday[0].day.avghumidity}%
         </CardTitle>

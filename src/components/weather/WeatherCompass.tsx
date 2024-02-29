@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface WeatherCompassProps {
   speed: number;
   deg: number;
@@ -7,7 +5,7 @@ export interface WeatherCompassProps {
 export const WeatherCompass = ({ speed, deg }: WeatherCompassProps) => {
   return (
     <>
-      <div className="relative -mt-5 flex h-[10rem] w-[10rem] items-center justify-center md:-mt-5 md:h-[9rem] md:w-[9rem]">
+      <div className="relative -mt-5 flex h-full aspect-square items-center justify-center md:-mt-5 ">
         <div className="absolute text-sm font-semibold">{Math.round(speed)}m/s</div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 331 331" className="absolute dark:invert">
           <g fill="none" fillRule="evenodd" opacity=".401">

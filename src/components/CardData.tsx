@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const CardData = ({
   data,
@@ -17,9 +11,9 @@ export const CardData = ({
 }) => {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="flex flex-col items-center justify-center gap-2">
-          {data}{' '}{unit}
+      <CardHeader className="">
+        <CardTitle className="flex flex-col items-center justify-center gap-2  text-base sm:text-xl">
+          {data} {unit}
         </CardTitle>
       </CardHeader>
       <CardContent>
