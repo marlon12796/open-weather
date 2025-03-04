@@ -37,3 +37,5 @@ next-env.d.ts
 
 public/sw.js
 public/workbox-9b4d2a02.js
+
+.vercel

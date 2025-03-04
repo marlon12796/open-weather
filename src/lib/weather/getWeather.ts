@@ -2,13 +2,12 @@
 import { cookies } from 'next/headers';
 export const getWeather = async () => {
   const city = cookies().get('defaultLocation')?.value || 'London';
-
   const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=3`;
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.API_KEY || '',
-      'X-RapidAPI-Host': process.env.API_HOST || '',
+      'x-rapidapi-host': process.env.API_HOST || '',
+      'x-rapidapi-key': process.env.API_KEY || '',
     },
   };
 

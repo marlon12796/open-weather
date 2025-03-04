@@ -2,7 +2,7 @@ import { WeatherView } from '@/components/WeatherView';
 import { cookies } from 'next/headers';
 
 const getWeather = async (city: string) => {
-  const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=3`;
+  const url = `https://open-weather13.p.rapidapi.com/forecast.json?q=${city}&days=3`;
   const options = {
     method: 'GET',
     headers: {

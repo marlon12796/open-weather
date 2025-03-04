@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Wethr",
-  "short_name": "Wethr",
+  "name": "Weather App",
+  "short_name": "Weather",
   "description": "Weather Forecast",
   "icons": [
     {
